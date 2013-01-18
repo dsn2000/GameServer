@@ -32,6 +32,7 @@ import server.services.message.address.AddressServiceImpl;
 import server.utils.TimeHelper;
 
 public class FrontendImpl implements Frontend {
+	
 	private MessageSystem messageSystem;
 	private AddressService addressService;
 	private Address address;
@@ -74,7 +75,8 @@ public class FrontendImpl implements Frontend {
 	}
 	
 	public void handleRequest(Request baseRequest, HttpServletRequest request,
-			HttpServletResponse response) {		
+			HttpServletResponse response) {	
+		
 		if (isStaticContentRequest(baseRequest, request)) {
 			handleStaticContentRequest(baseRequest, request, response);
 		} else if (isRefreshGameRequest(baseRequest, request)) {
